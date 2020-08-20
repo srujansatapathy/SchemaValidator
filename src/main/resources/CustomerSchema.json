@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "age": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "if": {
+    "properties": { "name": { "const": "Something" } }
+  },
+  "then": {
+    "properties": { "age": {"maximum" : 40} }
+  },
+  "else": {
+    "properties": { "age": {"maximum" : 50} }
+  }
+}
